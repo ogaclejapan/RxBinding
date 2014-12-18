@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RxBinding.iml" filepath="$PROJECT_DIR$/RxBinding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxbinding/rxbinding.iml" filepath="$PROJECT_DIR$/rxbinding/rxbinding.iml" />
+    </modules>
+  </component>
+</project>
+
