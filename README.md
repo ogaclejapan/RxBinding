@@ -1,21 +1,38 @@
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ogaclejapan/rxbinding/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.ogaclejapan/rxbinding)
+
 RxBinding
 ====
+
 
 ## Description
 
 RxBinding is easy oneway bindings for Android, which is based on RxJava.
 
+## Binaries
+
+Binaries and dependency information for Maven, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Ccom.ogaclejapan.rxbinding)
+
+Example for Gradle:
+
+```
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.ogaclejapan:rxbinding:1.0'
+}
+```
 
 ## Build
 
 To build:
 
-```bash
+```
 $ git clone git@github.com:ogaclejapan/RxBinding.git
 $ cd RxBinding/
 $ ./gradlew build
 ```
-
 
 ## LICENSE
 
