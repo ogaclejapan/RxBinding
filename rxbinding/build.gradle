@@ -1,16 +1,14 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'maven-publish'
-//apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 10
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode = VERSION_CODE
+        versionName = VERSION_NAME
     }
     buildTypes {
         release {
@@ -31,77 +29,6 @@ dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile 'io.reactivex:rxjava:1.0.2'
 }
-
-//android.libraryVariants.all { variant ->
-//    if (variant.buildType.isDebuggable()) {
-//        return; // Skip debug builds.
-//    }
-//    task("javadoc${variant.name.capitalize()}", type: Javadoc) {
-//        description "Generates Javadoc for $variant.name."
-//        source = variant.javaCompile.source
-//        ext.androidJar = System.getenv("ANDROID_HOME") + "/platforms/${android.compileSdkVersion}/android.jar"
-//        classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
-//    }
-//
-//    task("bundleJavadoc${variant.name.capitalize()}", type: Jar) {
-//        description "Bundles Javadoc into zip for $variant.name."
-//        classifier = "javadoc"
-//        from tasks["javadoc${variant.name.capitalize()}"]
-//    }
-//}
-//
-//task androidJar(type: Jar) {
-//    from 'build/intermediates/classes/release'
-//}
-//
-//task androidSourcesJar(type: Jar) {
-//    classifier = 'sources'
-//    from android.sourceSets.main.java.srcDirs
-//}
-//
-//artifacts {
-//    archives androidJar
-//    archives androidSourcesJar
-//}
-//
-//publishing {
-//    publications {
-//        maven(MavenPublication) {
-//            artifact androidJar
-//            artifact androidSourcesJar
-//            pom.withXml {
-//                Node root = asNode()
-//                root.appendNode('name', 'RxBinding')
-//                root.appendNode('description', 'RxBinding is easy oneway bindings for Android, which is based on RxJava.')
-//                root.appendNode('url', 'https://github.com/ogaclejapan/RxBinding')
-//
-//                def issues = root.appendNode('issueManagement')
-//                issues.appendNode('system', 'github')
-//                issues.appendNode('url', 'https://github.com/ogaclejapan/RxBinding/issues')
-//
-//                def scm = root.appendNode('scm')
-//                scm.appendNode('url', 'scm:https://github.com/ogaclejapan/RxBinding')
-//                scm.appendNode('connection', 'scm:git@github.com:ogaclejapan/RxBinding.git')
-//                scm.appendNode('developerConnection', 'scm:git@github.com:ogaclejapan/RxBinding.git')
-//
-//                def license = root.appendNode('licenses').appendNode('license')
-//                license.appendNode('name', 'Apache License, Version 2.0')
-//                license.appendNode('url', 'https://raw.githubusercontent.com/ogaclejapan/RxBinding/master/LICENSE.txt')
-//                license.appendNode('distribution', 'repo')
-//            }
-//        }
-//    }
-//}
-//
-//bintray {
-//    user = System.getenv('BINTRAY_USER') ?: project.properties.bintrayUser
-//    key  = System.getenv('BINTRAY_KEY')  ?: project.properties.bintrayKey
-//    publications = ['maven']
-//    pkg {
-//        repo = 'maven'
-//        name = 'RxBinding'
-//    }
-//}
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
 

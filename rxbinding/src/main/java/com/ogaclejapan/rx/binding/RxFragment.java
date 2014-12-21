@@ -15,10 +15,12 @@
 
 package com.ogaclejapan.rx.binding;
 
+import android.annotation.TargetApi;
 import android.app.Fragment;
 
 import rx.Scheduler;
 
+@TargetApi(11)
 public class RxFragment<T extends Fragment> extends RxWeakRef<T> {
 
     protected RxFragment(final T fragment) {

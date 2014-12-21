@@ -14,11 +14,13 @@
 
 package com.ogaclejapan.rx.binding;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.view.View;
 
 import rx.Scheduler;
 
+@TargetApi(12)
 public class RxView<T extends View> extends RxWeakRef<T>
         implements View.OnAttachStateChangeListener {
 
