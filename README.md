@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.ogaclejapan:rxbinding:1.0'
+    compile 'com.ogaclejapan:rxbinding:1.+'
 }
 ```
 
