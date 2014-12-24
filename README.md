@@ -1,5 +1,7 @@
-RxBinding [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ogaclejapan/rxbinding/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.ogaclejapan/rxbinding)
+RxBinding
 ==========
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ogaclejapan/rxbinding/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.ogaclejapan/rxbinding) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RxBinding-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1259)
+
 
 RxBinding is easy oneway bindings for Android, which is based on RxJava.
 
