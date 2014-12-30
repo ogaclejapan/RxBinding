@@ -26,13 +26,12 @@ dependencies {
 
 ## Usage
 
-Comming Soon.
-
-Sorry, Article that was written in Japanese can be found here.
-<http://ogaclejapan.com/languages/2014/12/22/reactivebinding-in-rxjava/>
-
 [Qiitanium](https://github.com/ogaclejapan/Qiitanium) is a reference application that implements this library.
 
+See [Wiki](https://github.com/ogaclejapan/RxBinding/wiki)
+
+Article that was written in Japanese can be found here.
+<http://ogaclejapan.com/languages/2014/12/22/reactivebinding-in-rxjava/>
 
 ## Build
 
