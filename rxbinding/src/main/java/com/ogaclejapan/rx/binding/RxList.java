@@ -53,6 +53,9 @@ public class RxList<E> extends RxObject<List<E>> implements RxReadOnlyList<E>, L
                             Tuple2<Integer, Collection<E>> listAddAllAtData = Tuple.of(kind.data);
                             addAll(list, listAddAllAtData.item1, listAddAllAtData.item2);
                             break;
+                        case clear:
+                            clear();
+                            break;
                         case removeAt:
                             Tuple1<Integer> listRemoveAtData = Tuple.of(kind.data);
                             remove(list, listRemoveAtData.item1);
