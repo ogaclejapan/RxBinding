@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,13 +18,12 @@ package com.ogaclejapan.rx.binding;
 
 public class Kind<T extends Enum<?>, E> {
 
-    public final T type;
+  public final T type;
+  public final E data;
 
-    public final E data;
-
-    public Kind(T type, E data) {
-        this.type = type;
-        this.data = data;
-    }
+  public Kind(T type, E data) {
+    this.type = type;
+    this.data = data;
+  }
 
 }

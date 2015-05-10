@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ogaclejapan.rx.binding">
+          package="com.ogaclejapan.rx.binding"
+    >
 
-    <application android:allowBackup="true"/>
+  <application android:allowBackup="true"/>
 
 </manifest>

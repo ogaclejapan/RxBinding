@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,53 +25,53 @@ import rx.functions.Action1;
 
 public class RxWeakRef<T> implements Rx<T> {
 
-    private final WeakReference<T> referent;
+  private final WeakReference<T> referent;
 
-    protected RxWeakRef(T referent) {
-        this.referent = new WeakReference<T>(referent);
-    }
+  protected RxWeakRef(T referent) {
+    this.referent = new WeakReference<T>(referent);
+  }
 
-    public static <T> RxWeakRef<T> of(T referent) {
-        return new RxWeakRef<T>(referent);
-    }
+  public static <T> RxWeakRef<T> of(T referent) {
+    return new RxWeakRef<T>(referent);
+  }
 
-    @Override
-    public T get() {
-        return referent.get();
-    }
+  @Override
+  public T get() {
+    return referent.get();
+  }
 
-    @Override
-    public <E> Subscription bind(final Observable<E> observable,
-            final Action<? super T, ? super E> action) {
-        return observable
-                .observeOn(observeOn())
-                .subscribe(onBind(action), ERROR_ACTION_EMPTY, COMPLETE_ACTION_EMPTY);
-    }
+  @Override
+  public <E> Subscription bind(final Observable<E> observable,
+      final Action<? super T, ? super E> action) {
+    return observable
+        .observeOn(observeOn())
+        .subscribe(onBind(action), ERROR_ACTION_EMPTY, COMPLETE_ACTION_EMPTY);
+  }
 
-    @Override
-    public final <E> Subscription bind(final RxObservable<E> observable,
-            final Action<? super T, ? super E> action) {
-        return bind(observable.asObservable(), action);
-    }
+  @Override
+  public final <E> Subscription bind(final RxObservable<E> observable,
+      final Action<? super T, ? super E> action) {
+    return bind(observable.asObservable(), action);
+  }
 
-    protected boolean isBindable(T target) {
-        return true;
-    }
+  protected boolean isBindable(T target) {
+    return true;
+  }
 
-    protected Scheduler observeOn() {
-        return MAIN_THREAD_SCHEDULER;
-    }
+  protected Scheduler observeOn() {
+    return MAIN_THREAD_SCHEDULER;
+  }
 
-    protected <E> Action1<E> onBind(final Action<? super T, E> action) {
-        return new Action1<E>() {
-            @Override
-            public void call(final E e) {
-                final T target = get();
-                if (target != null && isBindable(target)) {
-                    action.call(target, e);
-                }
-            }
-        };
-    }
+  protected <E> Action1<E> onBind(final Action<? super T, E> action) {
+    return new Action1<E>() {
+      @Override
+      public void call(final E e) {
+        final T target = get();
+        if (target != null && isBindable(target)) {
+          action.call(target, e);
+        }
+      }
+    };
+  }
 
 }

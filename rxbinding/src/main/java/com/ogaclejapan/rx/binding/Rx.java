@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,20 +26,19 @@ import rx.functions.Actions;
 
 public interface Rx<T> {
 
-    static interface Action<T, E> extends Action2<T, E> {
+  Scheduler MAIN_THREAD_SCHEDULER = new RxMainThreadScheduler();
+  Action1<Throwable> ERROR_ACTION_EMPTY = Actions.empty();
+  Action0 COMPLETE_ACTION_EMPTY = Actions.empty();
 
-        @Override
-        void call(T target, E e);
-    }
+  T get();
 
-    Scheduler MAIN_THREAD_SCHEDULER = new RxMainThreadScheduler();
-    Action1<Throwable> ERROR_ACTION_EMPTY = Actions.empty();
-    Action0 COMPLETE_ACTION_EMPTY = Actions.empty();
+  <E> Subscription bind(Observable<E> observable, Action<? super T, ? super E> action);
 
-    T get();
+  <E> Subscription bind(RxObservable<E> observable, Action<? super T, ? super E> action);
 
-    <E> Subscription bind(Observable<E> observable, Action<? super T, ? super E> action);
+  static interface Action<T, E> extends Action2<T, E> {
 
-    <E> Subscription bind(RxObservable<E> observable, Action<? super T, ? super E> action);
+    @Override void call(T target, E e);
+  }
 
 }

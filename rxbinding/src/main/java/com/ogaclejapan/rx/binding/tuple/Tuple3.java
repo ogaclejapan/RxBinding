@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,11 +18,11 @@ package com.ogaclejapan.rx.binding.tuple;
 
 public class Tuple3<T1, T2, T3> extends Tuple2<T1, T2> {
 
-    public final T3 item3;
+  public final T3 item3;
 
-    public Tuple3(T1 t1, T2 t2, T3 t3) {
-        super(t1, t2);
-        item3 = t3;
-    }
+  public Tuple3(T1 t1, T2 t2, T3 t3) {
+    super(t1, t2);
+    item3 = t3;
+  }
 
 }

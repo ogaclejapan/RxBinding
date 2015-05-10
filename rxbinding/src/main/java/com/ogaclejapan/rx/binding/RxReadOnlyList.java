@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,42 +28,42 @@ import rx.Subscription;
 
 public interface RxReadOnlyList<E> {
 
-    enum Event {
-        add, addAt, addAll, addAllAt, clear,
-        removeAt, remove, removeAll, retainAll, set
-    }
+  void setOnDataSetChangeListener(OnDataSetChangeListener listener);
 
-    interface OnDataSetChangeListener {
+  E get(int index);
 
-        void onDataSetChanged(Event type);
-    }
+  int indexOf(Object object);
 
-    void setOnDataSetChangeListener(OnDataSetChangeListener listener);
+  int lastIndexOf(Object object);
 
-    E get(int index);
+  boolean isEmpty();
 
-    int indexOf(Object object);
+  boolean contains(Object object);
 
-    int lastIndexOf(Object object);
+  boolean containsAll(Collection<?> c);
 
-    boolean isEmpty();
+  int size();
 
-    boolean contains(Object object);
+  Iterator<E> iterator();
 
-    boolean containsAll(Collection<?> c);
+  ListIterator<E> listIterator();
 
-    int size();
+  ListIterator<E> listIterator(int index);
 
-    Iterator<E> iterator();
+  List<E> subList(int fromIndex, int toIndex);
 
-    ListIterator<E> listIterator();
+  Observable<Kind<Event, Tuple>> onDataSetChanged();
 
-    ListIterator<E> listIterator(int index);
+  Subscription bind(RxReadOnlyList<E> list);
 
-    List<E> subList(int fromIndex, int toIndex);
+  enum Event {
+    add, addAt, addAll, addAllAt, clear,
+    removeAt, remove, removeAll, retainAll, set
+  }
 
-    Observable<Kind<Event, Tuple>> onDataSetChanged();
+  interface OnDataSetChangeListener {
 
-    Subscription bind(RxReadOnlyList<E> list);
+    void onDataSetChanged(Event type);
+  }
 
 }
