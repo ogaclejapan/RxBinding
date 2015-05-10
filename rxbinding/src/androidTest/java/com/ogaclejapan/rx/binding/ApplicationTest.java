@@ -1,4 +1,4 @@
-package ogaclejapan.com.rx.binding;
+package com.ogaclejapan.rx.binding;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
