@@ -10,7 +10,7 @@ android {
 
   defaultConfig {
     minSdkVersion 10
-    targetSdkVersion 21
+    targetSdkVersion COMPILE_SDK_VERSION as int
     versionCode VERSION_CODE as int
     versionName VERSION_NAME
   }
@@ -32,8 +32,8 @@ android {
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile 'com.android.support:support-v4:21.0.3'
-  compile 'io.reactivex:rxjava:1.0.2'
+  compile 'com.android.support:support-v4:22.0.0'
+  compile 'io.reactivex:rxandroid:1.0.0'
 }
 
 license {
@@ -173,6 +173,7 @@ bintray {
         sync = true
         user = nexusUser
         password = nexusPassword
+        close = '1'
       }
 
     }

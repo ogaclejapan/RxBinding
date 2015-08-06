@@ -19,6 +19,7 @@ package com.ogaclejapan.rx.binding;
 import rx.Observable;
 import rx.Scheduler;
 import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.functions.Action2;
@@ -26,7 +27,7 @@ import rx.functions.Actions;
 
 public interface Rx<T> {
 
-  Scheduler MAIN_THREAD_SCHEDULER = new RxMainThreadScheduler();
+  Scheduler MAIN_THREAD_SCHEDULER = AndroidSchedulers.mainThread();
   Action1<Throwable> ERROR_ACTION_EMPTY = Actions.empty();
   Action0 COMPLETE_ACTION_EMPTY = Actions.empty();
 
